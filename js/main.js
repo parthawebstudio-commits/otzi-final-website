@@ -1,292 +1,217 @@
-/* OTZI Tattoos & Piercings Guwahati — main.js */
-(function () {
-  "use strict";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tattoo Removal in Guwahati | OTZI Tattoos &amp; Piercings</title>
+  <meta name="description" content="Tattoo removal in Guwahati at OTZI. Every tattoo is different — consult directly with OTZI on WhatsApp to discuss your tattoo and removal options.">
+  <link rel="canonical" href="./tattoo-removal.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tattoo Removal in Guwahati | OTZI">
+  <meta property="og:description" content="Ready for a change? Consult OTZI directly about tattoo removal options.">
+  <meta property="og:image" content="assets/tattoos/removal-machine-01.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/logo/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" data-testid="logo-link" aria-label="OTZI Tattoos and Piercings Guwahati — Home">
+        <img src="assets/logo/logo.png" alt="OTZI Tattoos and Piercings Guwahati logo" class="brand-logo" width="300" height="120">
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a class="nav-link" data-nav="index.html" href="index.html" data-testid="nav-home">Home</a></li>
+          <li><a class="nav-link" data-nav="tattoos.html" href="tattoos.html" data-testid="nav-tattoos">Tattoos</a></li>
+          <li><a class="nav-link" data-nav="piercings.html" href="piercings.html" data-testid="nav-piercings">Piercings</a></li>
+          <li><a class="nav-link" data-nav="tattoo-removal.html" href="tattoo-removal.html" data-testid="nav-removal">Tattoo Removal</a></li>
+          <li><a class="nav-link" data-nav="gallery.html" href="gallery.html" data-testid="nav-gallery">Gallery</a></li>
+          <li><a class="nav-link" data-nav="contact.html" href="contact.html" data-testid="nav-contact">Contact</a></li>
+          <li><a class="btn btn-gold btn-sm" data-magnetic data-testid="nav-whatsapp" href="https://wa.me/918486567145?text=Hi%20OTZI%2C%20I%20want%20to%20consult%20about%20a%20tattoo%20or%20piercing." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Consult</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" data-testid="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
 
-  /* ---------- Lenis smooth momentum scrolling (CDN, optional) ---------- */
-  if (window.Lenis && !reduced) {
-    var lenis = new window.Lenis({ duration: 1.15, smoothWheel: true });
-    var rafLenis = function (t) { lenis.raf(t); requestAnimationFrame(rafLenis); };
-    requestAnimationFrame(rafLenis);
-  }
+  <div class="mobile-menu" id="mobile-menu">
+    <nav aria-label="Mobile navigation">
+      <ul>
+        <li><a class="m-link" data-nav="index.html" href="index.html" style="transition-delay:.06s">Home</a></li>
+        <li><a class="m-link" data-nav="tattoos.html" href="tattoos.html" style="transition-delay:.11s">Tattoos</a></li>
+        <li><a class="m-link" data-nav="piercings.html" href="piercings.html" style="transition-delay:.16s">Piercings</a></li>
+        <li><a class="m-link" data-nav="tattoo-removal.html" href="tattoo-removal.html" style="transition-delay:.21s">Tattoo Removal</a></li>
+        <li><a class="m-link" data-nav="gallery.html" href="gallery.html" style="transition-delay:.26s">Gallery</a></li>
+        <li><a class="m-link" data-nav="contact.html" href="contact.html" style="transition-delay:.31s">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="m-cta">
+      <a class="btn btn-gold" data-testid="mobile-whatsapp" href="https://wa.me/918486567145?text=Hi%20OTZI%2C%20I%20want%20to%20consult%20about%20a%20tattoo%20or%20piercing." target="_blank" rel="noopener noreferrer">Consult on WhatsApp</a>
+    </div>
+    <div class="m-socials socials">
+      <a href="https://www.instagram.com/otzi_tattoos22?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="OTZI on Instagram" data-testid="mobile-instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.facebook.com/share/1dkEFU6U72/" target="_blank" rel="noopener noreferrer" aria-label="OTZI on Facebook" data-testid="mobile-facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.6 1.7-1.6h1.5V3.2c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.7H7.8V13h2.7v8h3z"/></svg></a>
+    </div>
+  </div>
 
-  /* ---------- Header scroll state ---------- */
-  var header = document.getElementById("site-header");
-  function onScroll() {
-    if (header) header.classList.toggle("scrolled", window.scrollY > 24);
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  <main id="main">
+    <!-- PAGE HERO -->
+    <section class="page-hero hero" aria-label="Tattoo removal at OTZI">
+      <div class="hero-bg"><picture><source media="(min-width: 768px)" srcset="assets/studio/hero-desktop.jpg"><img src="assets/studio/hero-mobile.jpg" alt="Tattoo removal at OTZI Guwahati" fetchpriority="high"></picture></div>
+      <div class="hero-veil"></div>
+      <div class="particles" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow fade-item" style="--d:.1s">Ready for a change?</p>
+        <h1>
+          <span class="line"><span>TATTOO REMOVAL</span></span>
+          <span class="line"><span class="gold-i">AT OTZI.</span></span>
+        </h1>
+        <p class="lead fade-item" style="--d:.35s">OTZI also provides tattoo removal. Every tattoo is different — speak directly with us to discuss your tattoo and removal options.</p>
+        <div class="hero-ctas fade-item" style="--d:.5s">
+          <a class="btn btn-gold" data-testid="removal-whatsapp" href="https://wa.me/918486567145?text=Hi%20OTZI%2C%20I%20want%20to%20consult%20about%20a%20tattoo%20or%20piercing." target="_blank" rel="noopener noreferrer">Consult on WhatsApp</a>
+        </div>
+      </div>
+    </section>
 
-  /* ---------- Active nav + page context ---------- */
-  var page = location.pathname.split("/").pop() || "index.html";
-  var isHome = page === "index.html";
-  document.querySelectorAll("[data-nav]").forEach(function (a) {
-    if (a.getAttribute("data-nav") === page) a.classList.add("active");
-  });
+    <!-- ABOUT REMOVAL -->
+    <section class="section" aria-labelledby="about-removal">
+      <div class="container split">
+        <div>
+          <p class="eyebrow reveal">A Fresh Start</p>
+          <h2 id="about-removal" class="reveal" style="--d:.1s">Change is <span class="gold-i">part of the art.</span></h2>
+          <p class="lead reveal" style="--d:.2s">Tastes evolve, stories change, and sometimes a tattoo should too. At OTZI, removal begins with an honest conversation about your specific tattoo — its size, age, ink and placement — so you understand your options clearly before deciding anything.</p>
+          <p class="lead reveal" style="--d:.28s">Send a clear photo of your tattoo on WhatsApp and we'll take it from there. No pressure, no exaggerated promises — just straightforward guidance from people who understand ink.</p>
+          <div class="hero-ctas reveal" style="--d:.36s">
+            <a class="btn btn-outline" data-testid="removal-send-photo" href="https://wa.me/918486567145?text=Hi%20OTZI%2C%20I%20want%20to%20consult%20about%20a%20tattoo%20or%20piercing." target="_blank" rel="noopener noreferrer">Send a Photo of Your Tattoo</a>
+          </div>
+        </div>
+        <div class="grid-2" style="gap:1.1rem">
+          <div class="media-frame square reveal-scale" style="--d:.1s"><img src="assets/tattoos/removal-machine-02.jpg" alt="Tattoo removal machine detail at OTZI" loading="lazy"></div>
+          <div class="video-card reveal-scale" style="--d:.2s">
+            <span class="video-badge">Studio Clip</span>
+            <video data-src="assets/videos/tattoo-removal-02.mp4" muted loop playsinline preload="none" poster="assets/tattoos/removal-machine-01.jpg" data-autoplay aria-label="Tattoo removal clip at OTZI"></video>
+            <div class="video-fallback"><span>Tattoo removal — video</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  /* ---------- Mobile menu ---------- */
-  var toggle = document.querySelector(".menu-toggle");
-  var menu = document.getElementById("mobile-menu");
-  function setMenu(open) {
-    if (!toggle || !menu) return;
-    toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    menu.classList.toggle("open", open);
-    document.body.classList.toggle("menu-open", open);
-    if (open) {
-      var first = menu.querySelector("a");
-      if (first) first.focus({ preventScroll: true });
-    } else {
-      toggle.focus({ preventScroll: true });
-    }
-  }
-  if (toggle && menu) {
-    toggle.addEventListener("click", function () {
-      setMenu(toggle.getAttribute("aria-expanded") !== "true");
-    });
-    menu.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () { setMenu(false); });
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && menu.classList.contains("open")) setMenu(false);
-    });
-  }
+    <!-- HOW IT STARTS -->
+    <section class="section section-alt" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow centered reveal">How It Starts</p>
+          <h2 id="how-title" class="reveal" style="--d:.1s">Three simple <span class="gold-i">steps.</span></h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal" style="--d:.05s"><h3>Message Us</h3><p>Start a WhatsApp conversation and share a clear photo of the tattoo you'd like to discuss.</p></div>
+          <div class="step reveal" style="--d:.15s"><h3>Consultation</h3><p>We look at your tattoo together and talk honestly about the options that fit it.</p></div>
+          <div class="step reveal" style="--d:.25s"><h3>Your Plan</h3><p>If removal feels right for you, we plan the way forward — at your pace, with your comfort first.</p></div>
+        </div>
+      </div>
+    </section>
 
-  /* ---------- Hero load animation ---------- */
-  var hero = document.querySelector(".hero, .page-hero");
-  if (hero) requestAnimationFrame(function () { hero.classList.add("loaded"); });
+    <!-- STUDIO CLIPS -->
+    <section class="section" aria-labelledby="clips-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow centered reveal">Inside the Studio</p>
+          <h2 id="clips-title" class="reveal" style="--d:.1s">Removal at OTZI, <span class="gold-i">up close.</span></h2>
+        </div>
+        <div class="grid-3">
+          <div class="video-card reveal-scale" style="--d:.05s">
+            <span class="video-badge">Clip 01</span>
+            <video data-src="assets/videos/tattoo-removal-01.mp4" muted loop playsinline preload="none" poster="assets/tattoos/removal-machine-01.jpg" controls aria-label="Tattoo removal video 1 at OTZI"></video>
+            <div class="video-fallback"><span>Removal clip 01</span></div>
+          </div>
+          <div class="video-card reveal-scale" style="--d:.12s">
+            <span class="video-badge">Clip 02</span>
+            <video data-src="assets/videos/tattoo-removal-02.mp4" muted loop playsinline preload="none" poster="assets/tattoos/removal-machine-02.jpg" controls aria-label="Tattoo removal video 2 at OTZI"></video>
+            <div class="video-fallback"><span>Removal clip 02</span></div>
+          </div>
+          <div class="video-card reveal-scale" style="--d:.19s">
+            <span class="video-badge">Clip 03</span>
+            <video data-src="assets/videos/tattoo-removal-03.mp4" muted loop playsinline preload="none" poster="assets/tattoos/removal-machine-01.jpg" controls aria-label="Tattoo removal video 3 at OTZI"></video>
+            <div class="video-fallback"><span>Removal clip 03</span></div>
+          </div>
+        </div>
+        <p class="lead center reveal" style="--d:.15s;margin-top:2.2rem">Considering a cover-up instead? OTZI specialises in <a href="tattoos.html" class="gold" style="text-decoration:underline;text-underline-offset:4px">cover-ups and reworks</a> too — ask us which path suits your tattoo.</p>
+      </div>
+    </section>
 
-  /* ---------- Hero particles ---------- */
-  var pWrap = document.querySelector(".particles");
-  if (pWrap && !reduced) {
-    var n = window.innerWidth < 640 ? 8 : 14;
-    for (var i = 0; i < n; i++) {
-      var p = document.createElement("i");
-      p.style.left = Math.random() * 100 + "%";
-      p.style.top = 35 + Math.random() * 65 + "%";
-      p.style.setProperty("--dur", 11 + Math.random() * 12 + "s");
-      p.style.setProperty("--del", -Math.random() * 16 + "s");
-      p.style.setProperty("--dx", (Math.random() * 80 - 40) + "px");
-      var s = 2 + Math.random() * 2.5;
-      p.style.width = p.style.height = s + "px";
-      pWrap.appendChild(p);
-    }
-  }
+    <!-- CTA -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container">
+        <p class="eyebrow centered reveal">Ready For A Change?</p>
+        <h2 id="cta-title" class="reveal" style="--d:.1s">Let's talk about <span class="gold-i">your tattoo.</span></h2>
+        <p class="lead center reveal" style="--d:.2s">Every tattoo is different. Speak directly with OTZI to discuss your tattoo and removal options.</p>
+        <div class="hero-ctas reveal" style="--d:.3s">
+          <a class="btn btn-gold" data-magnetic data-testid="removal-final-cta" href="https://wa.me/918486567145?text=Hi%20OTZI%2C%20I%20want%20to%20consult%20about%20a%20tattoo%20or%20piercing." target="_blank" rel="noopener noreferrer">Consult on WhatsApp</a>
+          <a class="btn btn-outline" href="tel:+918486567145" data-testid="removal-call">Call OTZI</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  /* ---------- Hero mouse parallax (HOME ONLY, desktop) ---------- */
-  var heroBg = document.querySelector(".hero-bg");
-  var heroInner = document.querySelector(".hero-inner");
-  var panels = document.querySelectorAll(".hg-panel");
-  if (isHome && hero && finePointer && !reduced && window.innerWidth > 900 && (heroBg || panels.length)) {
-    var raf = null;
-    hero.addEventListener("mousemove", function (e) {
-      if (raf) return;
-      raf = requestAnimationFrame(function () {
-        var r = hero.getBoundingClientRect();
-        var x = (e.clientX - r.left) / r.width - 0.5;
-        var y = (e.clientY - r.top) / r.height - 0.5;
-        if (heroBg) heroBg.style.transform = "translate3d(" + x * -22 + "px," + y * -16 + "px,0)";
-        panels.forEach(function (pn) {
-          var d = parseFloat(pn.getAttribute("data-depth")) || 0.5;
-          pn.style.transform =
-            "translate3d(" + (x * -36 * d).toFixed(1) + "px," + (y * -26 * d).toFixed(1) + "px," + (-70 * d).toFixed(0) + "px)";
-        });
-        if (heroInner) heroInner.style.transform = "translate3d(" + x * 12 + "px," + y * 8 + "px,40px)";
-        raf = null;
-      });
-    });
-    hero.addEventListener("mouseleave", function () {
-      if (heroBg) heroBg.style.transform = "";
-      panels.forEach(function (pn) { pn.style.transform = ""; });
-      if (heroInner) heroInner.style.transform = "";
-    });
-    if (heroBg) heroBg.style.transition = "transform .6s cubic-bezier(.16,1,.3,1)";
-    if (heroInner) heroInner.style.transition = "transform .6s cubic-bezier(.16,1,.3,1)";
-  }
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo/logo.png" alt="OTZI Tattoos and Piercings Guwahati logo" class="footer-logo" width="300" height="120" loading="lazy">
+        <p>Custom tattoos, professional body piercings and tattoo removal in Guwahati — with the highest hygiene standards.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/otzi_tattoos22?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="OTZI on Instagram" data-testid="footer-instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/share/1dkEFU6U72/" target="_blank" rel="noopener noreferrer" aria-label="OTZI on Facebook" data-testid="footer-facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.6 1.7-1.6h1.5V3.2c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.7H7.8V13h2.7v8h3z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-h">Explore</h3>
+        <ul>
+          <li><a href="index.html" data-testid="footer-home">Home</a></li>
+          <li><a href="tattoos.html" data-testid="footer-tattoos">Tattoos</a></li>
+          <li><a href="piercings.html" data-testid="footer-piercings">Piercings</a></li>
+          <li><a href="tattoo-removal.html" data-testid="footer-removal">Tattoo Removal</a></li>
+          <li><a href="gallery.html" data-testid="footer-gallery">Gallery</a></li>
+          <li><a href="contact.html" data-testid="footer-contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-h">Contact</h3>
+        <ul>
+          <li><a href="https://wa.me/918486567145?text=Hi%20OTZI%2C%20I%20want%20to%20consult%20about%20a%20tattoo%20or%20piercing." target="_blank" rel="noopener noreferrer" data-testid="footer-whatsapp">WhatsApp OTZI</a></li>
+          <li><a href="tel:+918486567145" data-testid="footer-phone">+91 84865 67145</a></li>
+          <li><a href="mailto:otzitattoos22@gmail.com" data-testid="footer-email">otzitattoos22@gmail.com</a></li>
+          <li><p>House No. 264, 2nd floor, bylane 3, Rajgarh Rd, Sarania Hills, Guwahati, Assam 781003</p></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-h">Opening Hours</h3>
+        <ul class="footer-hours">
+          <li><span>Mon – Fri</span><span>10 AM – 9 PM</span></li>
+          <li><span>Saturday</span><span>10 AM – 9:30 PM</span></li>
+          <li><span>Sunday</span><span>11 AM – 4 PM</span></li>
+        </ul>
+        <div style="margin-top:1.2rem">
+          <a class="btn btn-outline btn-sm" href="https://maps.app.goo.gl/goTLdsNbNupBTDGr5" target="_blank" rel="noopener noreferrer" data-testid="footer-reviews">Read Google Reviews</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <span>© 2026 OTZI Tattoos and Piercings Guwahati. All rights reserved.</span>
+      <span class="credit">Designed by Partha - Web Designer</span>
+    </div>
+  </footer>
 
-  /* ---------- Reveal on scroll ---------- */
-  var revealEls = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale");
-  if ("IntersectionObserver" in window && !reduced) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          en.target.classList.add("in");
-          io.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
-    revealEls.forEach(function (el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add("in"); });
-  }
+  <a class="wa-float" href="https://wa.me/918486567145?text=Hi%20OTZI%2C%20I%20want%20to%20consult%20about%20a%20tattoo%20or%20piercing." target="_blank" rel="noopener noreferrer" aria-label="Chat with OTZI on WhatsApp" data-testid="wa-float">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
 
-  /* ---------- Card tilt (HOME ONLY, desktop) ---------- */
-  if (isHome && finePointer && !reduced) {
-    document.querySelectorAll("[data-tilt]").forEach(function (card) {
-      var raf2 = null;
-      card.addEventListener("mousemove", function (e) {
-        if (raf2) return;
-        raf2 = requestAnimationFrame(function () {
-          var r = card.getBoundingClientRect();
-          var x = (e.clientX - r.left) / r.width - 0.5;
-          var y = (e.clientY - r.top) / r.height - 0.5;
-          card.style.transform =
-            "perspective(900px) rotateX(" + (-y * 5).toFixed(2) + "deg) rotateY(" +
-            (x * 6).toFixed(2) + "deg) translateY(-6px)";
-          raf2 = null;
-        });
-      });
-      card.addEventListener("mouseleave", function () { card.style.transform = ""; });
-    });
-  }
-
-  /* ---------- Magnetic CTA (HOME ONLY, desktop) ---------- */
-  if (isHome && finePointer && !reduced) {
-    document.querySelectorAll("[data-magnetic]").forEach(function (el) {
-      el.addEventListener("mousemove", function (e) {
-        var r = el.getBoundingClientRect();
-        var x = (e.clientX - r.left) / r.width - 0.5;
-        var y = (e.clientY - r.top) / r.height - 0.5;
-        el.style.transform = "translate(" + x * 8 + "px," + y * 6 + "px)";
-      });
-      el.addEventListener("mouseleave", function () { el.style.transform = ""; });
-    });
-  }
-
-  /* ---------- Lazy videos ---------- */
-  var lazyVideos = document.querySelectorAll("video[data-src]");
-  function loadVideo(v) {
-    if (v.dataset.loaded) return;
-    v.dataset.loaded = "1";
-    v.src = v.getAttribute("data-src");
-    v.load();
-    v.addEventListener("error", function () {
-      var wrap = v.closest(".video-card");
-      if (wrap) wrap.classList.add("no-video");
-    }, true);
-    if (v.hasAttribute("data-autoplay")) {
-      var pr = v.play();
-      if (pr && pr.catch) pr.catch(function () {});
-    }
-  }
-  if ("IntersectionObserver" in window) {
-    var vio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          loadVideo(en.target);
-          vio.unobserve(en.target);
-        }
-      });
-    }, { rootMargin: "240px" });
-    lazyVideos.forEach(function (v) { vio.observe(v); });
-  } else {
-    lazyVideos.forEach(loadVideo);
-  }
-
-  /* ---------- Count-up numbers ---------- */
-  var counters = document.querySelectorAll("[data-count]");
-  if (counters.length && "IntersectionObserver" in window && !reduced) {
-    var cio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        cio.unobserve(en.target);
-        var el = en.target;
-        var target = parseInt(el.getAttribute("data-count"), 10);
-        var t0 = null;
-        function tick(ts) {
-          if (!t0) t0 = ts;
-          var p = Math.min((ts - t0) / 1500, 1);
-          var eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.round(target * eased).toLocaleString("en-IN");
-          if (p < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(function (c) { cio.observe(c); });
-  }
-
-  /* ---------- Gallery filter ---------- */
-  var filterBtns = document.querySelectorAll(".filter-btn");
-  var items = document.querySelectorAll(".m-item");
-  filterBtns.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      filterBtns.forEach(function (b) {
-        b.classList.remove("active");
-        b.setAttribute("aria-pressed", "false");
-      });
-      btn.classList.add("active");
-      btn.setAttribute("aria-pressed", "true");
-      var f = btn.getAttribute("data-filter");
-      items.forEach(function (it) {
-        var show = f === "all" || it.getAttribute("data-category") === f;
-        it.classList.toggle("g-hide", !show);
-      });
-    });
-  });
-
-  /* ---------- Lightbox ---------- */
-  var lb = document.getElementById("lightbox");
-  if (lb && items.length) {
-    var lbImg = lb.querySelector("img");
-    var lbCap = lb.querySelector("figcaption");
-    var lbCount = lb.querySelector(".lb-count");
-    var idx = 0;
-
-    function visibleItems() {
-      return Array.prototype.filter.call(items, function (it) {
-        return !it.classList.contains("g-hide");
-      });
-    }
-    function show(i) {
-      var vis = visibleItems();
-      if (!vis.length) return;
-      idx = (i + vis.length) % vis.length;
-      var img = vis[idx].querySelector("img");
-      lbImg.src = img.getAttribute("src");
-      lbImg.alt = img.alt;
-      lbCap.textContent = img.getAttribute("data-cap") || img.alt;
-      lbCount.textContent = (idx + 1) + " / " + vis.length;
-    }
-    function open(i) {
-      show(i);
-      lb.classList.add("open");
-      document.body.classList.add("lb-open");
-      lb.querySelector(".lb-close").focus({ preventScroll: true });
-    }
-    function close() {
-      lb.classList.remove("open");
-      document.body.classList.remove("lb-open");
-    }
-    items.forEach(function (it) {
-      it.setAttribute("tabindex", "0");
-      it.setAttribute("role", "button");
-      it.addEventListener("click", function () {
-        open(visibleItems().indexOf(it));
-      });
-      it.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          open(visibleItems().indexOf(it));
-        }
-      });
-    });
-    lb.querySelector(".lb-close").addEventListener("click", close);
-    lb.querySelector(".lb-prev").addEventListener("click", function () { show(idx - 1); });
-    lb.querySelector(".lb-next").addEventListener("click", function () { show(idx + 1); });
-    lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
-    document.addEventListener("keydown", function (e) {
-      if (!lb.classList.contains("open")) return;
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") show(idx - 1);
-      if (e.key === "ArrowRight") show(idx + 1);
-    });
-  }
-
-  /* ---------- Today highlight in hours tables ---------- */
-  var todayRow = document.querySelector('.hours-table tr[data-day="' + new Date().getDay() + '"]');
-  if (todayRow) todayRow.classList.add("today");
-})();
+  <script src="https://unpkg.com/lenis@1/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
